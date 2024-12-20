@@ -9,7 +9,8 @@ let firstCardWidth = cards[0].offsetWidth;
 
 btns.forEach((btn) => {
   btn.onclick = () => {
-    slider.scrollLeft += btn.id === "left" ? -firstCardWidth : firstCardWidth;
+    slider.scrollLeft += btn.id === "left" 
+      ? -firstCardWidth : firstCardWidth;
   };
 });
 
