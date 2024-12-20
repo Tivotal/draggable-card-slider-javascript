@@ -1,0 +1,133 @@
+/* Created by Tivotal */
+
+/* Google Fonts(Poppins) */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  padding: 0 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e8e8e8;
+}
+
+.wrapper {
+  position: relative;
+  max-width: 1100px;
+  width: 100%;
+}
+
+.wrapper i {
+  width: 50px;
+  height: 50px;
+  background: #0034c4;
+  color: #fff;
+  border-radius: 50%;
+  line-height: 50px;
+  text-align: center;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.wrapper i.left {
+  left: -22px;
+}
+
+.wrapper i.right {
+  right: -22px;
+}
+
+.slider {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% / 3) - 12px);
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+}
+
+.slider::-webkit-scrollbar {
+  display: none;
+}
+
+.slider .card {
+  list-style: none;
+  width: 98%;
+  height: 340px;
+  background: #fff;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  scroll-snap-align: start;
+}
+
+.card .image {
+  width: 150px;
+  height: 150px;
+  background: #0034c4;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card .image img {
+  width: 145px;
+  height: 145px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.card h2 {
+  font-size: 25px;
+  font-weight: 600;
+  margin: 30px 0 5px;
+}
+
+.card span {
+  font-size: 18px;
+  color: #999;
+}
+
+@media (max-width: 900px) {
+  .wrapper .slider {
+    grid-auto-columns: calc((100% / 2) - 12px);
+  }
+}
+
+@media (max-width: 600px) {
+  .wrapper .slider {
+    grid-auto-columns: 100%;
+  }
+}
+
+.wrapper i.inactive {
+  background: #97b2fd;
+  pointer-events: none;
+}
+
+.slider.dragging {
+  scroll-snap-type: none;
+  scroll-behavior: auto;
+}
+
+.slider.dragging .card {
+  cursor: grab;
+  user-select: none;
+}
