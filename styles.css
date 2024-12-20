@@ -117,11 +117,6 @@ body {
   }
 }
 
-.wrapper i.inactive {
-  background: #97b2fd;
-  pointer-events: none;
-}
-
 .slider.dragging {
   scroll-snap-type: none;
   scroll-behavior: auto;
